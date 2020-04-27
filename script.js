@@ -7,7 +7,8 @@ window.onload=()=>{var mySwiper= new Swiper('.swiper-container',{
   loop:true
 }
     )}
-$('buttonelem').onclick=()=>{
-	query=$('query').value;
-	window.location=`searchresult.html?query=${query}`;
-}
+document.addEventListener('keydown',(e)=>{
+	console.log(e);
+	if(e.keyCode==13){query=$('query').value;
+		window.location=`searchresult.html?query=${query}`;}
+})
