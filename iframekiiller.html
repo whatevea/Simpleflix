@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+<style>
+	body{marign:0;height: 100%; width:100%;}
+	iframe{
+		height: 100vh; width:100%;
+	}
+	iframe{
+
+	}
+</style>
+</head>
+
+<iframe id="iframe" marginwidth=0 marginheight=0 scrolling="no" width="720" height="90" allowfullscreen="true" frameborder="0" scrolling="no"></iframe>
+<script>
+query=location.search;
+const url=`https://database.gdriveplayer.me/google.php${query}`;
+document.getElementById('iframe').src=url;
+</script>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style type="text/css">
+		img{height: 100px;
+			width: 120px;}
+	</style>
+		<meta name="viewport" content="width=device-width, user-scalable=no">
+		<meta charset="utf-8">
+	<title></title>
+</head>
+<body>
+<div id="main">
+	
+</div>
+</body>
+<script type="text/javascript">
+	query=location.search.split('query=')[1];
+const url=`https://forgaming.uc.r.appspot.com/search?query=${query}`;
+fetch(url).then((res)=>res.json()).then((data)=>{
+	var html="";
+	data.forEach((item)=>{
+	html+=`<div class="search-item"><img src="${item.image}"><a href="series_details.html?imdbcode=${item.imdbcode}">${item.title}_${item.year}</a></div>`;
+	})
+	document.getElementById('main').innerHTML=html;
+})
+</script>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+		<meta name="viewport" content="width=device-width, user-scalable=no">
+	<meta charset="utf-8">
+	<title>Watch Now </title>
+	<style type="text/css">
+		@font-face {
+  font-family: 'MyWebFont';
+  src:url('netflixfont.woff2') format('woff2');
+}
+body{
+  margin:0;
+  padding: 0;
+  color:#e5e5e5;
+  background-color: #141414;
+ font-family: 'MyWebFont', Fallback, sans-serif;
+}
+.logo img{height: 100%
+}
+.logo{
+  height: 10vh;
+  text-align: center;
+  border-radius: 10px;
+  border-bottom: 4px solid #b4131d;
+}
+.videohere{text-align: center;}
+#videohere{
+	width: 80vw;
+	height: 45vw;
+	border:solid 5px red;
+}
+	</style>
+
+
+</head>
+<body>
+<div class="logo">
+				<img src="logo.png">
+</div>
+<div class="videohere">
+	<iframe id="videohere" src="" marginwidth="0" marginheight="0" scrolling="no" allowfullscreen="true" sandbox="allow-scripts allow-same-origin" width="640" height="500" frameborder="0"></iframe>
+</div>
+<div class="buttons"></div>
+</body>
+<script type="text/javascript">
+	var season;
+	var episode;
+	const imdbcode=window.location.search.split('imdbcode=')[1].split('&')[0];
+	console.log(imdbcode);
+	try{
+	season=window.location.search.split('&season=')[1].split('&')[0];
+	console.log(season);
+	episode=window.location.search.split('ep=')[1];
+	console.log(episode);
+	renderEpisode();}
+ 	catch{renderMovie() ;}
+ function renderMovie(){
+ 	url=`https://crawl-nepali-sentences-git-iframewithoutsandbox.sandipbamrel.now.sh/?link=https:^^database.gdriveplayer.me^google.php?imdb=${imdbcode}`;
+	document.getElementById('videohere').src=url;
+ }
+function renderEpisode(){
+	url=`iframekiiller.html?imdb=${imdbcode}&season=${season}&episode=${episode}`;
+	document.getElementById('videohere').src=url;
+
+}
+</script>
+</html>
