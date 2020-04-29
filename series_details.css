@@ -13,6 +13,7 @@ font-family: 'Times New Roman';
 }
 #gif{
   height: 80vh;
+  width:80vw;
 }
 #maindiv{
   display: none;
